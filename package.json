@@ -1,0 +1,22 @@
+{
+  "name": "my-ts-boilerplate",
+  "version": "1.0.0",
+  "description": "My ts boilerplate for projects of any size",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoaoWesley/my-ts-boilerplate.git"
+  },
+  "author": "João Wesley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoaoWesley/my-ts-boilerplate/issues"
+  },
+  "homepage": "https://github.com/JoaoWesley/my-ts-boilerplate#readme",
+  "devDependencies": {
+    "@types/node": "^14.14.10"
+  }
+}
