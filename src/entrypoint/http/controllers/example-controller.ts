@@ -8,7 +8,7 @@ import {
   request,
   requestBody
 } from 'inversify-express-utils';
-import { IExampleParams } from '../../../core/domain/model';
+import { ExampleParams } from '../../../core/domain/model';
 import { DOMAIN_TYPES } from '../../../commons/types';
 import { ExampleService } from '../../../core/domain/service';
 
@@ -22,7 +22,7 @@ export class ContextController {
 
   @httpPost('/')
   public async create(
-    @requestBody() exampleParams: IExampleParams,
+    @requestBody() exampleParams: ExampleParams,
     @request() req: Request,
     @response() res: Response,
   ) {            

@@ -1,2 +1,2 @@
-export { IExampleParams } from './example-params';
-export { IExampleDbModel } from './example-db-model';
+export { ExampleParams } from './example-params';
+export { ExampleDbModel } from './example-db-model';

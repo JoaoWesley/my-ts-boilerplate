@@ -1,1 +1,1 @@
-export { IExampleRepository } from './example-repository';
+export { ExampleRepository } from './example-repository';
