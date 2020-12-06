@@ -23,9 +23,9 @@ export class ContextController {
   public async create(
     @requestBody() exampleParams: ExampleParams,
     @response() res: Response
-  ): Response {
+  ): Promise<void> {
     this._exampleService.exampleMethod(exampleParams.id);
-
+    
     return res.status(CREATED).json("exampleResult").end();
   }
 }
