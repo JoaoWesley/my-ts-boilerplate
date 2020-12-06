@@ -25,7 +25,7 @@ export class ContextController {
     @response() res: Response
   ): Promise<void> {
     this._exampleService.exampleMethod(exampleParams.id);
-    
+
     return res.status(CREATED).json("exampleResult").end();
   }
 }

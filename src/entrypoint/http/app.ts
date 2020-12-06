@@ -7,6 +7,7 @@ import { Container } from "inversify";
 import { InversifyExpressServer } from "inversify-express-utils";
 
 import { createIocConfig } from "../../commons/config/";
+import { envVariablesConfig } from "../../commons/config/";
 
 export default class HttpApplication {
   private serverInversify: InversifyExpressServer;
@@ -22,8 +23,8 @@ export default class HttpApplication {
   }
 
   public async boot(): Promise<void> {
-    this.env = "DEV";
-    this.port = 3000;
+    this.env = envVariablesConfig.APP_ENV;
+    this.port = envVariablesConfig.PORT;
     this.serverInversify.setConfig((app: express.Application) => {
       app.use(bodyParser.json());
     });
