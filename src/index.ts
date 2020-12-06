@@ -1,5 +1,6 @@
-import 'reflect-metadata';
-import {} from 'inversify';
+import "reflect-metadata";
 
-import { startHttp } from './entrypoint/http/server';
+import {} from "inversify";
+
+import { startHttp } from "./entrypoint/http/server";
 startHttp();

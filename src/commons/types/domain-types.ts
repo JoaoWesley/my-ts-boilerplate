@@ -1,4 +1,3 @@
 export const DOMAIN_TYPES = {
-  ExampleService: Symbol('ExampleService'),
+  ExampleService: Symbol("ExampleService"),
 };
-  

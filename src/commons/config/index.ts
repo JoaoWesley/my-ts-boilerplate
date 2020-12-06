@@ -1,1 +1,1 @@
-export { default as createIocConfig } from './ioc.config';
+export { default as createIocConfig } from "./ioc.config";

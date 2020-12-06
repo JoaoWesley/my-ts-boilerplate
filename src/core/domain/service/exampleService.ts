@@ -1,15 +1,17 @@
-import { injectable, inject } from 'inversify';
-import { REPOSITORY_TYPES } from '../../../commons/types';
-import { ExampleRepository } from '../repository/example-repository';
+import { inject, injectable } from "inversify";
+
+import { REPOSITORY_TYPES } from "../../../commons/types";
+import { ExampleDbModel } from "../../domain/model";
+import { ExampleRepository } from "../repository/example-repository";
 
 @injectable()
 export class ExampleService {
   constructor(
     @inject(REPOSITORY_TYPES.ExampleDbRepository)
-    private _exampleRepository: ExampleRepository,
+    private _exampleRepository: ExampleRepository
   ) {}
-    exampleMethod(foo: string) {    
-        console.log('method service called')
-        this._exampleRepository.findById('id');
-    } 
+  async exampleMethod(id: number): Promise<ExampleDbModel> {
+    console.log("method service called");
+    return this._exampleRepository.findById(id);
+  }
 }

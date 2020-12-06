@@ -1,5 +1,5 @@
-import { ExampleDbModel } from '../model';
+import { ExampleDbModel } from "../model";
 
-export interface ExampleRepository {  
-  findById(id: string): Promise<ExampleDbModel>;  
+export interface ExampleRepository {
+  findById(id: number): Promise<ExampleDbModel>;
 }

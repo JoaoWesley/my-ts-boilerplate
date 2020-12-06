@@ -1,37 +1,31 @@
-import { inject } from 'inversify';
-import { Request, Response } from 'express';
-import { CREATED } from 'http-status-codes';
+import { Response } from "express";
+import { CREATED } from "http-status-codes";
+import { inject } from "inversify";
 import {
   controller,
-  httpPost,  
-  response,  
-  request,
-  requestBody
-} from 'inversify-express-utils';
-import { ExampleParams } from '../../../core/domain/model';
-import { DOMAIN_TYPES } from '../../../commons/types';
-import { ExampleService } from '../../../core/domain/service';
+  httpPost,
+  requestBody,
+  response,
+} from "inversify-express-utils";
 
+import { DOMAIN_TYPES } from "../../../commons/types";
+import { ExampleParams } from "../../../core/domain/model";
+import { ExampleService } from "../../../core/domain/service";
 
-@controller('/example')
+@controller("/example")
 export class ContextController {
   constructor(
     @inject(DOMAIN_TYPES.ExampleService)
-    private _exampleService: ExampleService,
+    private _exampleService: ExampleService
   ) {}
 
-  @httpPost('/')
+  @httpPost("/")
   public async create(
     @requestBody() exampleParams: ExampleParams,
-    @request() req: Request,
-    @response() res: Response,
-  ) {            
+    @response() res: Response
+  ): Response {
+    this._exampleService.exampleMethod(exampleParams.id);
 
-    this._exampleService.exampleMethod(exampleParams.foo);
-
-    return res
-      .status(CREATED)
-      .json('exampleResult')
-      .end();
-  }  
+    return res.status(CREATED).json("exampleResult").end();
+  }
 }

@@ -1,5 +1,5 @@
 export interface ExampleParams {
-    foo: string;
-    bar?: string;    
-  }
-  
+  id: number;
+  foo: string;
+  bar?: string;
+}
