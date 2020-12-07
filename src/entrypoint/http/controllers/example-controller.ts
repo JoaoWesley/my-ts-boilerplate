@@ -24,8 +24,13 @@ export class ContextController {
     @requestBody() exampleParams: ExampleParams,
     @response() res: Response
   ): Promise<void> {
-    this._exampleService.exampleMethod(exampleParams.id);
+    const result = await this._exampleService.exampleMethod(
+      exampleParams.idDocument
+    );
+    if (result) {
+      console.log("document already exists");
+    }
 
-    return res.status(CREATED).json("exampleResult").end();
+    return res.status(CREATED).json(result).end();
   }
 }

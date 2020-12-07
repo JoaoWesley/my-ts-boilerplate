@@ -6,8 +6,11 @@ import * as express from "express";
 import { Container } from "inversify";
 import { InversifyExpressServer } from "inversify-express-utils";
 
-import { createIocConfig } from "../../commons/config/";
-import { envVariablesConfig } from "../../commons/config/";
+import {
+  connectMongoose,
+  createIocConfig,
+  envVariablesConfig,
+} from "../../commons/config/";
 
 export default class HttpApplication {
   private serverInversify: InversifyExpressServer;
@@ -23,6 +26,7 @@ export default class HttpApplication {
   }
 
   public async boot(): Promise<void> {
+    await connectMongoose();
     this.env = envVariablesConfig.APP_ENV;
     this.port = envVariablesConfig.PORT;
     this.serverInversify.setConfig((app: express.Application) => {

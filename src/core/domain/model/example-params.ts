@@ -1,5 +1,5 @@
 export interface ExampleParams {
-  id: number;
+  idDocument: string;
   foo: string;
   bar?: string;
 }
