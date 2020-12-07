@@ -5,7 +5,7 @@ import { ExampleService } from "../../core/domain/service";
 import { ExampleDbRepository } from "../../infrastructure/repository/example-repository";
 import { DOMAIN_TYPES, REPOSITORY_TYPES } from "../types";
 
-export default function createIocConfig(): ContainerModule {
+export function createIocConfig(): ContainerModule {
   return new ContainerModule((bind) => {
     /**
      * Services
